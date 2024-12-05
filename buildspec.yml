@@ -17,6 +17,8 @@ phases:
       - echo Pushing the Docker image to Amazon ECR...
       - docker push 637423521355.dkr.ecr.ap-south-1.amazonaws.com/milind/fastapi_fargate:latest
       - echo Build and push completed successfully.
+      - echo "Creating imagedefinitions.json..."
+      - echo '[{"name":"fastap_app","imageUri":"637423521355.dkr.ecr.ap-south-1.amazonaws.com/milind/fastapi_fargate:latest"}]' > imagedefinitions.json
 
 
 artifacts:
