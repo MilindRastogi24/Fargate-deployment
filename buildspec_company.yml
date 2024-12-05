@@ -5,17 +5,17 @@ phases:
   pre_build:
     commands:
       - echo Logging in to Amazon ECR...
-      - aws ecr get-login-password --region ap-south-1 | docker login --username AWS --password-stdin 637423521355.dkr.ecr.ap-south-1.amazonaws.com
+      - aws ecr get-login-password --region ap-south-1 | docker login --username AWS --password-stdin 152690675458.dkr.ecr.ap-south-1.amazonaws.com
   build:
     commands:
       - echo Build started
       - echo Building the Docker image...
       - docker build -t fastapi_test:latest .
-      - docker tag fastapi_test:latest 637423521355.dkr.ecr.ap-south-1.amazonaws.com/milind/fastapi_fargate:latest
+      - docker tag fastapi_test:latest 152690675458.dkr.ecr.ap-south-1.amazonaws.com/milind/fastapi:latest
   post_build:
     commands:
       - echo Pushing the Docker image to Amazon ECR...
-      - docker push 637423521355.dkr.ecr.ap-south-1.amazonaws.com/milind/fastapi_fargate:latest
+      - docker push 152690675458.dkr.ecr.ap-south-1.amazonaws.com/milind/fastapi:latest
       - echo Build and push completed successfully.
 
 
